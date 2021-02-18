@@ -1,0 +1,1217 @@
+:root {
+    /*FONTS*/
+    --default-font: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Microsoft YaHei Light", sans-serif; /*Note text*/
+    --mermaid-font: var(--default-font); /*mermaidjs text*/
+    --reveal-font: var(--default-font); /*??*/
+    --font-monospace: 'Source Code Pro', monospace; /*Code block text*/
+    --its-font: 'Calisto MT'; /*Works, but if it doesn't, needs !important*/
+}
+
+.workspace {
+    background-color: var(--background-secondary);
+    /**/
+    --border-radius: 0px;
+}
+
+.theme-dark {
+    --background-primary: var(--note); /*Note background*/
+    --background-primary-alt: var(--deep-dark-accent); /*Note Title background active*/
+    --background-secondary: var(--side-bar); /*Sidebar background*/
+    --background-secondary-alt: var(--outer-bar); /*Sidebar Title background*/
+    
+    --background-modifier-border: #2d3034; /*Border outline of quotes, tables, line breaks*/
+    
+    --background-modifier-form-field: rgba(0, 0, 0, 0.3); /*Search Field Bg Color*/
+    --background-modifier-form-field-highlighted: rgba(52, 123, 237, 0.22); /*Searched Highlight Color*/
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.3); /*Outershadow*/
+    --background-modifier-success: #197300; /*Publish Upload Success Background*/
+    --background-modifier-error: #3d0000; /*??*/
+    --background-modifier-error-rgb: 61, 0, 0; /*??*/
+    --background-modifier-error-hover: #470000; /*??*/
+    --background-modifier-cover: black; /*Obsidian Title Bar Bg*/
+    
+    --text-on-accent: #dcddde; /*Program Title bar Text*/
+    --text-muted: var(--soft-text); /*Text darker for sidebar, toggles, inactive, tags, etc*/
+    --text-normal: var(--text); /*Text body of note*/
+    --text-accent: var(--bright-blue); /*Links*/
+    --text-accent-hover: var(--red); /*Links hover*/
+    --text-faint: #4e5b6f; /*Link brackets color*/
+    --text-error: #ff3333; /*??*/
+    --text-error-hover: #990000; /*??*/
+    
+    --text-highlight-bg: rgba(168, 60, 60, 0.4); /*Text highlights*/
+    --text-highlight-bg-active: rgba(255, 128, 0, 0.4); /*??*/
+    --text-selection: rgba(77, 23, 23, 0.46); /*Cursor dragged highlights*/
+    
+    --interactive-normal: #652121; /*Button Color*/
+    --interactive-hover: #303030;/*Button Color*/
+    --interactive-accent: var(--accent); /*Workspace Note Title Underline*/
+    --interactive-accent-rgb: 52, 123, 237; /*Publish item select*/
+    --interactive-accent-hover: #862f35; /*Menu Button Hover*/
+    --interactive-success: #197300; /*??*/
+    
+    --scrollbar-bg: rgba(255, 255, 255, 0.05);
+    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.1);
+    --highlight-mix-blend-mode: lighten;
+
+    /*--DEFAULT VARIABLES--*/
+
+    /*COLORS*/
+    --dark-gray: #232a34;
+    --gray: #3c5274;
+    --bright-red: #e06c75;
+    --dark-red: #290000/*#2f1010*/;
+    --dark-lite-red: #571a1a;
+    --red: #883737/*#c14343*/;
+    --blue: #4c78cc;
+    --dark-blue: #1a1e24;
+    --navy-blue: #20242b;
+    --bright-blue: #61afef;
+    --deep-dark-blue: #10161d;
+    
+    
+    /*Compatibility Color Recoloring*/
+    --deep-dark-accent: var(--dark-red);
+    --dark-accent: var(--dark-lite-red);
+    --lite-accent: var(--bright-red);
+    --accent: var(--red);
+    --bg: var(--dark-gray);
+    --fg: white;
+    --side-bar: var(--note);
+    --outer-bar: #0e0f15;
+    --dark-sidebar: var(--deep-dark-blue);
+    --inactive: #586477;
+    
+    --file-select: var(--dark-lite-red);
+    --file: var(--soft-text);
+    --folder: #e05858;
+    --f-hover: var(--accent);
+    
+    --note: var(--dark-blue);
+    --text: #dcddde;
+    --headers: #c14343;
+    --soft-text: #aab3ca;
+    --code-bg: #232831;
+    --code-text: #fa4545;
+    
+    --tag: var(--dark-lite-red);
+    --table: #2f3440;
+    --hr: var(--gray);
+    --i-at: #bf5e5e;
+    
+    --graph-bg: var(--deep-dark-blue);
+    --graph-lines: #53201F;
+    --graph-node: #cfd7dd;
+    --graph-fill: var(--header);
+    --graph-404: #727e93;
+    --graph-img: var(--blue) /*#ff86be*/;
+    --graph-tag: var(--headers);
+}
+
+.theme-light {
+    --background-primary: var(--note); /*Note background*/
+    --background-primary-alt: var(--dark-accent); /*Note Title background active*/
+    --background-secondary: var(--side-bar); /*Sidebar background*/
+    --background-secondary-alt: var(--outer-bar); /*Sidebar Title background*/
+    
+    --background-modifier-border: #e6bebe; /*Border outline of quotes, tables, line breaks*/
+    
+    --background-modifier-form-field: rgba(0, 0, 0, 0.3); /*??*/
+    --background-modifier-form-field-highlighted: rgba(240, 131, 131, 0.22); /*Search Bar Active Highlight*/
+    --background-modifier-box-shadow: rgba(0, 0, 0, 0.3); /*??*/
+    --background-modifier-success: #deedd9; /*Publish Upload Success Background*/
+    --background-modifier-error: #efa9a9; /*??*/
+    --background-modifier-error-rgb: 240, 131, 131; /*Ctrl F Search Background*/
+    --background-modifier-error-hover: #470000; /*??*/
+    --background-modifier-cover: var(--dark-red); /*Obsidian Title Bar*/
+    
+    --text-on-accent: #dcddde; /*Program Title bar text*/
+    --text-muted: var(--soft-text); /*Text darker for sidebar, toggles, inactive, tags, etc*/
+    --text-normal: var(--text); /*Text body of note*/
+    --text-accent: var(--bright-blue); /*Links*/
+    --text-accent-hover: var(--red); /*Links hover*/
+    --text-faint: #4e5b6f; /*Link brackets color*/
+    --text-error: #ff3333; /*??*/
+    --text-error-hover: #990000; /*??*/
+    
+    --text-highlight-bg: rgba(199, 129, 129, 0.4); /*Text highlights*/
+    --text-highlight-bg-active: rgba(253, 115, 115, 0.4); /*Search Highlight*/
+    --text-selection: rgba(229, 149, 149, 0.37); /*Cursor dragged highlights*/
+    
+    --interactive-normal: #f5d5d5; /*Button background Color*/
+    --interactive-hover: #303030; /*Button hover text*/
+    --interactive-accent: var(--red); /*Workspace Note Title Underline*/
+    --interactive-accent-rgb: 52, 123, 237; /*Publish item select*/
+    --interactive-accent-hover: #862f35; /*Menu Button Hover*/
+    --interactive-success: #197300; /*??*/
+    
+    --scrollbar-bg: rgba(255, 255, 255, 0.05);
+    --scrollbar-thumb-bg: rgba(255, 255, 255, 0.1);
+    --highlight-mix-blend-mode: darken; /*Search Highlight Mode*/
+
+    /*--DEFAULT VARIABLES--*/
+
+    /*COLORS*/
+    --dark-gray: #e1e6ed;
+    --gray: #d6deea;
+    --bright-red: #a35158;
+    --dark-red: #2f1010;
+    --dark-lite-red: #ffeded;
+    --red: #c14343;
+    --blue: #4c78cc;
+    --dark-blue: #f8fbff;
+    --navy-blue: #cbcfd8;
+    --bright-blue: #5599d0;
+    --deep-dark-blue: #91a3c1;
+    
+    
+    /*Compatibility Color Recoloring*/
+    --deep-dark-accent: var(--note);
+    --dark-accent: var(--dark-lite-red);
+    --lite-accent: var(--bright-red);
+    --accent: var(--red);
+    --bg: var(--dark-gray);
+    --fg: #9f0202;
+    --side-bar: var(--note);
+    --outer-bar: #dfe7ef;
+    --dark-sidebar: var(--sidebar);
+    --inactive: #91a3c1;
+    
+    --file-select: #ca8385;
+    --file: #647489;
+    --folder: #ce6d6d;
+    --f-hover: #912e2e;
+    
+    --headers: #c14343;
+    --note: var(--dark-blue);
+    --text: #697580;
+    --soft-text: #d04e4e;
+    --code-bg: #e6e6e8;
+    --code-text: #ea4262;
+
+    --tag: #c65656;
+    --table: #c9ced9;
+    --hr: var(--gray);
+    --i-at: #804848;
+    
+    --graph-bg: var(--note);
+    --graph-lines: #e4e7f8;
+    --graph-node: var(--headers);
+    --graph-fill: #2e5db2;
+    --graph-404: #727e93;
+    --graph-img: var(--blue) /*#5469de*/;
+    --graph-tag: #000000;    
+}
+
+
+
+/*--WORKSPACE--*/
+/*Obsidian Title Bar Cover*/
+.titlebar {
+    background-color: var(--background-modifier-cover);
+}
+
+/*Ribbon Icons*/
+.side-dock-ribbon-tab, .side-dock-ribbon-action, .workspace-tab-header-inner-icon{
+    color: var(--soft-text);
+    text-align: center;
+    cursor: pointer;
+    stroke-width: 2px;
+}
+
+/*Buttons*/
+.nav-action-button.is-active {
+    background-color: var(--dark-accent);
+    color: var(--soft-text);
+}
+
+/*Pinned Pane Button Color*/
+.view-action:hover, .view-action.is-active {
+    color: var(--lite-accent);
+}
+
+/*Sidebar Resize Handle*/
+.workspace-leaf-resize-handle {
+    background-color: var(--bg);
+    transition: background-color 200ms ease-in-out;
+}
+
+
+
+/*Square Tabs*/
+/*Left*/
+.workspace-tab-container-before.is-before-active .workspace-tab-header-inner, .workspace-tab-header.is-before-active .workspace-tab-header-inner {
+    border-bottom-right-radius: 0px;
+}
+/*Right*/
+.workspace-tab-container-after.is-after-active .workspace-tab-header-inner, .workspace-tab-header.is-after-active .workspace-tab-header-inner {
+    border-bottom-left-radius: 0px;
+}
+/*Top*/
+.workspace-tab-header.is-active {
+    border-radius: var(--border-radius) var(--border-radius) 0px 0px;
+}
+
+
+
+/*-File Navbar-*/
+/*Adjusting Padding of Navbar Icons*/
+.nav-header {
+    padding: 3% 0px 5px;
+}
+/*Adjusting Button Padding*/
+.nav-action-button {
+    padding: 5px 8px 0 8px;
+    margin: 0 3px 0px 3px;
+    border-radius: var(--border-radius);
+}
+
+/*Remove Bottom Scrollbar*/
+.nav-files-container {
+    overflow-x: hidden;
+}
+
+/*Vault Name*/
+.nav-folder.mod-root > .nav-file-title, .nav-folder.mod-root > .nav-folder-title {
+    color: var(--folder);
+    font-family: var(--its-font);
+    font-size: 24px;
+    /*border-bottom: 3px solid var(--accent);*/
+    padding-bottom: 2%;
+}
+
+/*Nav Folder/File Icons*/
+.nav-folder-children .nav-folder-title-content::before {
+    content: '📁'/*\1F5BF*/;
+    color: transparent;
+    text-shadow: 0 0 0 var(--folder);
+    margin-right: 4px;
+    font-size: 13px;
+}
+.nav-folder-children .nav-file-title-content::before {
+    content: "📄"/*\1F5D0*/;
+    color: transparent;
+    text-shadow: 0 0 0 var(--file);
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+/*Inactive Folder Color*/
+.is-collapsed .nav-folder-title-content:before {
+    text-shadow: 0 0 0 var(--headers);
+}
+
+/*Nav Folder Lines*/
+.nav-folder, .nav-file {
+    margin: -2px !important;
+    border-left: 2px solid var(--table);
+}
+/*Align Folder Line*/
+.nav-folder-children {
+    padding-left: 18px;
+}
+
+/*Text wrap*/
+.nav-file-title, .nav-folder-title {
+    white-space: normal;
+    width: auto;
+    border-radius: var(--border-radius);
+}
+
+/*Folder Bold*/
+.nav-folder-title-content {
+    font-weight: 600;
+}
+
+/*Folder Push Left*/
+.nav-folder-title {
+    padding-left: 4px;
+}
+.nav-folder-title:hover {
+    color: var(--f-hover) !important;
+}
+
+/*File Colors|File Under Folder*/
+.nav-file-title {
+    padding-left: 1.8%;
+    color: var(--file);
+}
+.nav-file-title:hover {
+    color: var(--f-hover) !important;
+    font-weight: 600; 
+}
+
+/*File selected*/
+.nav-file-title.is-active {
+    background-color: var(--dark-accent);
+    border-color: var(--file-select);
+}
+
+/*Arrows*/
+.nav-folder .collapse-icon {
+    display: none;
+}
+
+
+/*-Core Plugin Panes-*/
+/*Word Wrap Pane*/
+.tree-item-inner {
+    word-wrap: break-word;
+    width: 100%;
+}
+
+/*Tag Pane*/
+/*Text*/
+.tree-item-self {
+    color: var(--soft-text);
+}
+.tag-container .tree-item-self:hover {
+    color: var(--code-text);
+}
+
+/*Tag Pane Lines*/
+/* Works but Dot appears*/
+.tag-container .tree-item-children {
+    margin-left: 3.5%;
+    border-left: 2px solid var(--inactive);
+    transition: all 0.5s ease-in-out;
+}
+
+.tag-container .tree-item-children:hover {
+    border-left: 2px solid var(--accent);
+}
+
+/*Outline Pane Lines*/
+.outline .tree-item-children {
+    margin-left: 3.3%;
+    border-left: 2px solid var(--inactive);
+    transition: all 0.5s ease-in-out;
+    border-radius: var(--border-radius);
+    padding-left: 10px;
+}
+.outline .tree-item-text:hover {
+    border-left-color: var(--accent);
+}
+
+
+
+/*--Search--*/
+/*Highlight Search Result*/
+.search-result-file-matched-text {
+    color: var(--soft-text);
+    background-color: var(--background-modifier-form-field-highlighted);
+    padding: 2px;
+}
+
+input[type='text']:hover,
+input[type='search']:hover,
+input[type='email']:hover,
+input[type='password']:hover,
+input[type='number']:hover {
+  background-color: var(--background-modifier-form-field-highlighted);
+}
+
+
+/*-Graph Settings-*/
+.graph-controls.is-close {
+    /* background-color: var(--background-primary); */
+}
+/*Opened Settings*/
+.graph-controls {
+    background-color: var(--note);
+    border: 1px solid var(--background-modifier-border);
+    border-radius: var(--border-radius);
+}
+
+/*Arrows*/
+.collapse-icon svg {
+    transition: transform 100ms ease-in-out;
+    color: var(--soft-text);
+}
+
+/*Slider Colors*/
+input[type='range'] {
+    background-color: var(--bg);
+}
+
+/*Search bar colors*/
+input[type='text'], input[type='search'], input[type='email'], input[type='password'], input[type='number'] {
+    background: var(--outer-sidebar);
+    border: 1px solid var(--table);
+    color: var(--soft-text);
+}
+
+.checkbox-container {
+    cursor: pointer;
+    background-color: var(--inactive);
+}
+    
+.suggestion-item.is-selected {
+    background-color: var(--dark-accent);
+}
+
+
+
+/*--Setings Menu--*/
+/*Square Settings Background*/
+.modal {
+    border-radius: var(--border-radius);
+}
+
+/*Settings Right*/
+.modal.mod-settings .vertical-tab-content-container {
+    padding: 35px 40px 20px 0;
+    height: 70vh;
+    background-color: var(--sidebar);
+}
+.horizontal-tab-content, .vertical-tab-content {
+    background-color: var(--sidebar);
+    padding: 5px 30px;
+}
+
+/*Settings Left*/
+.vertical-tab-header {
+    background-color: var(--dark-sidebar);
+}
+.horizontal-tab-nav-item, .vertical-tab-nav-item {
+    background-color: var(--dark-sidebar);
+    padding: 10px 6px 10px 24px;
+    cursor: default;
+    font-size: 16px;
+}
+/*Selected Item*/
+.horizontal-tab-nav-item.is-active, .vertical-tab-nav-item.is-active {
+    background-color: var(--dark-accent);
+}
+
+
+/*Dropdown Arrow*/
+.dropdown {
+    background-color: var(--bg);
+    background-image: url(data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E);
+}
+
+/*Account Header 2*/
+.vertical-tab-content h2 {
+    font-size: 30px;
+    font-weight: 900;
+    text-align: center;
+    font-family: var(--its-font) !important;
+}
+
+/*Hotkey*/
+.setting-hotkey {
+    background-color: var(--code-bg);
+    color: var(--soft-text);
+}
+
+
+
+/*--Publish Settings--*/
+.modal-bg {
+    background-color: var(--background-modifier-form-field-highlighted);
+}
+.list-item-part mod-extended publish-upload-item-title {
+    color: white;
+}
+
+/*Published flair*/
+.flair {
+    background-color: var(--interactive-normal);
+    color: var(--accent);
+}
+
+/*Publish item select*/
+.file-tree-item-header.is-selected {
+    background-color: rgba(var(--interactive-accent-rgb), 0.2);
+}
+
+/*--Sliding Panes--*/
+/*Hide the gradient of the Title Pane*/
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header > .view-header-title-container:after {
+  background: rgba(0,0,0,0) !important;
+}
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header > .view-header-title-container:before {
+  background: rgba(0,0,0,0) !important;
+}
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container:before {
+    background: rgba(0,0,0,0) !important;
+}
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf > .workspace-leaf-content > .view-header > .view-header-title-container:after {
+    background: rgba(0,0,0,0) !important;
+}
+/*Recolored and Eased Dropshadow*/
+body.plugin-sliding-panes-stacking .workspace > .mod-root > .workspace-leaf {
+    box-shadow: 0px 0px 20px 20px rgba(0, 28, 74, 0.15) !important;
+}
+
+/*Note Title Bar*/
+body.plugin-sliding-panes-rotate-header .workspace > .mod-root > .workspace-leaf.mod-active > .workspace-leaf-content > .view-header {
+    border-right: 2px solid var(--header);
+    border-bottom: none;
+}
+
+
+/*--Graph View--*/
+/*  background of graph view pane*/
+.workspace-leaf-content[data-type = "graph"] .view-content{
+    background-color: var(--graph-bg); 
+}
+
+.graph-view.color-fill {
+    color: var(--graph-node); /*Created notes color*/
+}
+
+.graph-view.color-line {
+    color: var(--graph-lines);
+}
+.graph-view.color-text {
+    color: var(--soft-text);
+}
+/*Hover Node*/
+.graph-view.color-fill-highlight {
+    color: var(--graph-fill); /*Circle color*/
+}
+.graph-view.color-circle {
+    color: white; /*Outline color*/
+}
+
+.graph-view.color-line-highlight {
+    color: var(--accent);
+}
+
+.graph-view.color-arrow {
+    color: var(--soft-text);
+}
+
+.graph-view.color-fill-tag {
+    color: var(--graph-tag) !important;
+}
+
+.graph-view.color-fill-attachment {
+    color: var(--graph-img) !important;
+}
+
+.graph-view.color-fill-unresolved {
+    color: var(--graph-404) !important; 
+}
+
+
+
+/*--Bottom Bar--*/
+.status-bar {
+    background-color: var(--outer-bar);
+    border-top: 1px solid var(--background-modifier-border);
+    color: var(--text-muted);
+}
+
+
+
+/*--Scrollbars--*/
+/*Scrollbar*/
+::-webkit-scrollbar-thumb {
+    background-color: var(--accent);
+    -webkit-border-radius: var(--border-radius); /*Remove Rounding*/
+}
+::-webkit-scrollbar-thumb:active {
+    background-color: var(--lite-accent);
+    -webkit-border-radius: var(--border-radius); /*Remove Rounding*/
+}
+::-webkit-scrollbar {
+    background-color: var(--bg);
+    -webkit-border-radius: var(--border-radius); /*Remove Rounding*/
+}
+
+
+/*--NOTE TITLEBAR--*/
+/*Inactive Note Titlebar*/
+.view-header-title {
+    color: var(--inactive);    
+}
+
+.view-header-icon {
+    color: var(--soft-text);
+}
+
+/*Active Note Titlebar*/
+.workspace-leaf.mod-active .view-header-title {
+    color: var(--soft-text);
+}
+
+
+
+
+
+
+/*--NOTES--*/
+/*Note*/
+body {
+    text-rendering: optimizeLegibility;
+    font-family: var(--default-font);
+    line-height: 1.5em;
+    font-size: 16px;
+    background-color: var(--background-primary);
+    color: var(--text-normal);
+    z-index: 1;
+}
+
+
+/*--Headings--*/
+h1, h2, h3, h4, h5, h6, .cm-s-obsidian .cm-header {
+    font-weight: 600;
+    font-family: var(--its-font) !important;
+    color: var(--headers) !important;
+}
+
+/*Editor Heading Re-size*/
+/*Inspired by Red Graphite*/
+.cm-s-obsidian pre.HyperMD-header > span > span:first-child {
+    font-size: 10px;
+}
+
+/*Heading Line*/
+h1:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4px;
+    background: var(--table);
+    left: 0;
+}
+
+h2:after {
+    content: "";
+    display: block;
+    width: 85%;
+    height: 3px;
+    background: var(--table);
+    left: 0;
+}
+
+h3:after {
+    content: "";
+    display: block;
+    width: 65%;
+    height: 3px;
+    background: var(--table);
+    left: 0;
+}
+
+h4:after {
+    content: "";
+    display: block;
+    width: 40%;
+    height: 3px;
+    background: var(--table);
+    left: 0;
+}
+
+/*Editor Heading Lines*/
+.cm-s-obsidian pre.HyperMD-header:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--table);
+    left: 0;
+}
+
+/*-Code-*/
+.markdown-preview-view code, .markdown-preview-view pre {
+    color: var(--code-text);
+    font-family: var(--font-monospace);
+    background-color: var(--code-bg);
+    z-index: 1; /*Lets the highlight appear on top*/
+    line-height: 1.4em;
+}
+
+.markdown-preview-view pre[class*="language-"], .markdown-preview-view code[class*="language-"] {
+    background: var(--code-bg);
+    line-height: 1.4em;
+    display: block;
+    white-space: pre-wrap !important;
+}
+
+/*Editor Code*/
+.cm-s-obsidian pre.HyperMD-codeblock, span.cm-inline-code {
+    background-color: var(--code-bg) !important;
+    color: var(--code-text) !important;
+    z-index: 0;
+}
+
+/*Italicized Text*/
+i { /*I used for image description, em is just regular italics*/
+    display: block;
+    font-style: italic;
+    color: var(--i-at);
+    text-align: center;
+}
+
+
+
+/*--Link--*/
+/*Active Link*/
+a, .markdown-preview-view .internal-link {
+  text-decoration: none; /*No underline*/
+}
+
+/*Link to No Page*/
+.markdown-preview-view .internal-link.is-unresolved {
+    opacity: 0.8;
+    color: var(--lite-accent);
+}
+
+
+
+/*--Bullet Points--*/
+/*Bullet Line*/
+.cm-hmd-list-indent .cm-tab, ul ul {
+    position: relative;
+}
+.cm-hmd-list-indent .cm-tab::before, ul ul::before {
+    content:'';
+    border-left: 2px solid var(--accent);
+    position: absolute;
+}
+.cm-hmd-list-indent .cm-tab::before {
+    left: 0;
+    top: -5px;
+    bottom: -4px; 
+}
+ul ul::before {
+    left: -12px;
+    top: 0;
+    bottom: 0; 
+}
+/*Bullet Shape and Smaller Indentation*/
+ul, ul ul, ul ul ul, ul ul ul ul {
+    list-style-type: "⬥ ";
+    padding-inline-start: 25px;
+}
+
+/*List Arrow*/
+.markdown-preview-view .list-collapse-indicator {
+    padding-left: 13px;
+    /*display:none;*/
+}
+
+/*--Horizontal Linebreak--*/ 
+.markdown-preview-view hr, .HyperMD-hr-bg {
+    height: 0; /*Center Line Vertically*/
+    border-bottom: 1px solid;
+    border-color: var(--hr);
+}
+
+/*Stylized hr Line*/
+.markdown-preview-view hr::after, div:not(.CodeMirror-activeline)>.HyperMD-hr-bg::after {
+    content: "⧫" "⍚" "⧫";
+    display: inline-block;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(0deg);
+    transform-origin: 50% 50%;
+    color: var(--fg);
+    padding: 5px; /*Symbol Padding*/
+    background-color: var(--background-primary); /*Color bg to cover line*/
+}
+
+/*Center --- Lines*/
+.cm-s-obsidian pre.HyperMD-hr {
+    text-align: center;
+}
+/*Hide --- Lines*/
+div:not(.CodeMirror-activeline)>.CodeMirror-line span.cm-hr {
+    color: transparent;
+}
+
+
+/*--Images--*/
+/*Center Image*/
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Kepano: https://forum.obsidian.md/t/image-zoom-click-hold-to-expand-images/5164
+Enlarge Image:*/
+.markdown-preview-view img {
+	cursor:zoom-in;
+}
+
+.markdown-preview-view img:active {
+	cursor:zoom-out;
+	display:block;
+	z-index:100;
+	position:fixed;
+    max-height:100%;
+    max-width:100%;
+    height:100%;
+    width:100%;
+    object-fit: contain;
+    margin:0 auto;
+    text-align:center;
+    top: 50%;
+  	transform: translateY(-50%);
+    padding:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:var(--background-primary);}
+
+/*Kepano: https://forum.obsidian.md/t/display-side-by-side-image-grid-css-snippet/9359
+Masonry/Gallery View*/
+.markdown-preview-view img {
+	cursor: zoom-in;
+}
+
+.markdown-preview-view img:active {
+	cursor:zoom-out;
+	display:block;
+	z-index:100;
+	position:fixed;
+    max-height:100%;
+    max-width:100%;
+    height:100%;
+    width:100%;
+    object-fit: contain;
+    margin:0 auto;
+    text-align:center;
+    top: 50%;
+  	transform: translateY(-50%);
+    padding:0;
+    left:0;
+    right:0;
+    bottom:0;
+    background:var(--background-primary);
+}
+
+
+/*--List--*/
+/*Checkboxes*/
+.markdown-preview-view .task-list-item-checkbox {
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  border: 1px solid var(--accent);
+  border-radius: var(--border-radius);
+  position: relative;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  filter: none;
+  outline: none;
+  margin: auto 6px auto 6px;
+  cursor: pointer;
+  vertical-align: baseline;
+}
+
+/*Checkbox Checked color*/
+.markdown-preview-view .task-list-item-checkbox:checked {
+  border: none;
+  background-color: var(--blue);
+}
+
+/*** /*Checkbox Checked Checkmark* /
+.markdown-preview-view .task-list-item-checkbox:checked::before {
+  content: ' ';
+  position: absolute;
+  background-color: white;
+  -webkit-mask-image: url('data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 14 14\'%3E%3Cpolygon points=\'5.5 11.9993304 14 3.49933039 12.5 2 5.5 8.99933039 1.5 4.9968652 0 6.49933039\'%3E%3C/polygon%3E%3C/svg%3E');
+  left: 2px;
+  top: 2px;
+  right: 2px;
+  bottom: 2px;
+
+}***/
+
+/*Checked Checkbox*/
+.markdown-preview-view ul > li.task-list-item.is-checked {
+    text-decoration: none;
+    color: var(--text-faint);
+    font-weight: bold;
+}
+
+/*Table Checkboxes*/
+input[type="checkbox" i] {
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    border: 1px solid var(--accent);
+    border-radius: 2px;
+    position: relative;
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    filter: none;
+    outline: none;
+    margin-top: auto;
+    margin-bottom: auto;
+    cursor: pointer;
+}
+
+input[type="checkbox checked"] {
+    -webkit-appearance: none;
+    box-sizing: border-box;
+    border-radius: 2px;
+    position: relative;
+    width: 1.3em;
+    height: 1.3em;
+    margin: 0, 0, 0, 0;
+    filter: none;
+    outline: none;
+    border: none;
+    background-color: var(--blue);
+}
+
+
+/*Colored List Markers*/
+li::marker {
+    color: var(--soft-text);
+}
+
+
+/*--Table--*/
+.markdown-preview-view table {
+    border-color: var(--soft-text);
+}
+
+/*Border Color*/
+.markdown-preview-view th, .markdown-preview-view td {
+    padding: 4px 10px;
+    border: 1px solid var(--table);
+}
+
+
+/*--Tags--*/
+.tag {
+  background-color: var(--tag);
+  border: none;
+  color: white !important;
+  font-size: 12px;
+  padding: 1px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 0px;
+  cursor: pointer;
+}
+
+/*Hover Underline*/
+.tag:hover {
+    color: white !important;
+    text-decoration: underline;
+}
+
+/*--Frontmatter/Metadata--*/
+/*No Background Color, Smaller Padding*/
+.frontmatter-container {
+    background-color: transparent;
+    border: 0px;
+    padding: 0px 14px;
+}
+/*Horizontal line for bottom*/
+.frontmatter-container:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: var(--table);
+}
+
+.frontmatter-container .frontmatter-container-header {
+    border-bottom: 1px solid var(--table);
+}
+
+
+.frontmatter-container .tag {
+    background-color: var(--tag);
+}
+
+/*Tags Hover*/
+.frontmatter-container .tag:hover {
+    background-color: var(--accent);
+}
+
+/*--Embeds--*/
+/*Remove Top Padding*/
+.markdown-embed .markdown-preview-view {
+    padding: 5px 10px;
+}
+
+/* Italicize Embed Title*/
+.markdown-embed-title, .file-embed-title {
+    color: var(--lite-accent);
+    font-size: 20px;
+    font-family: var(--its-font);
+    line-height: 20px; /*Lower Height Title*/
+    width: 100%;
+    height: auto;
+    text-align: center;
+    font-weight: 900;
+    padding: 1% 8% 0% 1%;
+    white-space: normal;
+}
+
+/* Italicize Embed Headings*/
+.markdown-preview-view .markdown-embed h1, .markdown-embed h2, .markdown-embed h3, .markdown-embed h4, .markdown-embed h5, .markdown-embed h6 {
+    font-size: 20px;
+    line-height: 1em;
+    color: var(--accent);
+    font-style: italic;
+}
+
+/*Embed Window*/
+.markdown-preview-view .markdown-embed, .markdown-preview-view .file-embed {
+    border-top: 1px solid var(--background-modifier-border);
+    border-bottom: 1px solid var(--background-modifier-border);
+    margin: 28px 0;
+}
+
+/*Embed Link Color*/
+.markdown-embed-link, .file-embed-link {
+    color: var(--lite-accent);
+    background-color: var(--note);
+    padding: 5px 5px 0px 5px;
+}
+
+
+/*--Popover--*/
+/*Larger Popover*/
+.popover.hover-popover {
+    width: 30%;
+    border-radius: var(--border-radius);
+    min-height: 100px;
+    max-height: 600px;
+    border: 2px solid var(--dark-accent);
+}
+
+/*Show More Embed in Popover*/
+/*Must fit within the Max-Height value^^*/
+.popover.hover-popover .markdown-embed {
+    height: 500px;
+}
+
+/*Fit image in popover*/
+.popover.hover-popover img {
+    max-width: 100%;
+    height: auto;
+}
+
+/*Crop Image in Popover*/
+.popover.hover-popover img {
+    object-fit: cover;
+    height: 200px;
+    width: 100%;
+    object-position: center;
+}
+
+/*Fix Quote in Popover*/
+.popover.hover-popover blockquote:before {
+    top: -5px;
+    z-index: 0;
+}
+
+/*Popover Link Bg Color*/
+.popover .markdown-embed-link, .file-embed-link {
+    background-color: var(--dark-accent);
+    padding: 5px 5px 0px 5px;
+}
+
+/*Fit Text Within Popover**
+.popover {
+  font-size: 16px;
+  text-align: justify;
+}*/
+
+
+
+/*--Blockquote--*/
+.markdown-preview-view blockquote {
+    border: 1px solid var(--table);
+    background-color: var(--bg);
+    border-left-width: 8px;
+    position: relative;
+    margin: 2%;
+    padding-right: 6%; /*Don't overlap with "*/
+}
+
+/*Quotation Mark*/
+.markdown-preview-view blockquote:before {
+    content: '\201D';
+    position: absolute;
+    top: 20px;
+    right: 1.5%;
+    font-size: 50px;
+    font-family: var(--its-font);
+    color: var(--headers);
+}
+
+/*--Query--*/
+/*Smaller Query Titles*/
+.markdown-preview-view .internal-query.is-embed .internal-query-header-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--soft-text);
+    line-height: 18px;
+    
+}
+
+/*Header Spacing*/
+.markdown-preview-view .internal-query.is-embed .internal-query-header {
+    padding: 0.5%;
+}
+
+/*Iframe Borderless*/
+iframe {
+    border-width: var(--border-radius);
+    border-style: inset;
+    border-color: initial;
+    border-image: initial;
+}
+
+/*---Publish---*/
+.site-header {
+    font: Calisto MT;
+    text-align: left;
+}
+
+.page-header {
+    font-size: 0px;
+    font-family: Calisto MT;
+    color: transparent;
+    line-height: 0px;
+}
+
+site-body-left-column-site-name {
+    font: Calisto MT;
+    color: var(--header);
+}
+
+
+.site-body {
+    background-color: var(--side-bar);
+}
+
+.site-body-left-column {
+    background-color: var(--outer-bar);
+}
+
+.site-body-left-column:before {
+    content: ' ';
+    position: absolute;
+    right: 100%;
+    top: 0;
+    width: 100vw;
+    height: 100%;
+    background-color: var(--outer-bar);
+    z-index: 0;
+}
+
+
+.graph-view-container {
+    position: relative;
+    height: 300px;
+    border: 1px solid var(--table);
+    border-radius: 10px;
+    background-color: var(--graph-bg);
+    padding: 4px;
+}
